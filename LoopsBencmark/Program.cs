@@ -1,16 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 
 namespace LoopsBencmark
-{
+{ 
     class Program
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Hello World!");
-            var summary = BenchmarkRunner.Run<LoopsPerformance>();
+            
+            Bar();
+        }
+        
+        
+       public static void Bar()
+        {
+            List<int> list = new List<int>();
+
+            int Add(int a, int b)  
+            {  
+                return a + b;  
+            }  
+  
+            Console.WriteLine(Add(3,4)); 
         }
     }
 
